@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Random Hiragana</title>
-
-    <style>
-        #word {
-            font-size: 100px;
-        }
-    </style>
 </head>
-
 <body>
-    <h1 id="word"></h1>
+    <div id="words"></div>
 
     <script>
         const hiragana = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん";
 
-        let word = "";
+        const words = [];
 
-        for (let i = 0; i < 3; i++) {
-            const index = Math.floor(Math.random() * hiragana.length);
-            word += hiragana[index];
+        for (let j = 0; j < 3; j++) {
+            let word = "";
+
+            for (let i = 0; i < 3; i++) {
+                const index = Math.floor(Math.random() * hiragana.length);
+                word += hiragana[index];
+            }
+
+            words.push(word);
         }
 
-        document.getElementById("word").textContent = word;
+        document.getElementById("words").innerHTML = words.join("<br><br>");
     </script>
 </body>
 </html>
