@@ -1,0 +1,25 @@
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Hiragana</title>
+</head>
+<body>
+    <h1 id="word"></h1>
+
+    <script>
+        const hiragana = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん";
+
+        let word = "";
+
+        for (let i = 0; i < 3; i++) {
+            const index = Math.floor(Math.random() * hiragana.length);
+            word += hiragana[index];
+        }
+
+        document.getElementById("word").textContent = word;
+    </script>
+</body>
+</html>
+```
